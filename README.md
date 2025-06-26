@@ -1,4 +1,4 @@
-Technology
+### Technology
 - Java
 - Selenium WebDriver
 - Cucumber BDD
@@ -7,7 +7,7 @@ Technology
 - WebDriverManager
 - Extent Reports (optional)
 
-## Features Automated
+### Features Automated
 
 ### Signup Validations
 Validation of SignUp Page Error Message 
