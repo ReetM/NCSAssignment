@@ -1,0 +1,17 @@
+
+Scenario: SignUp validation                                                # features/SignupValidation.feature:3
+  Given I open the PizzaNCS website click on Login signup                  # stepDefinitions.StepDef_Signup.clickLoginSignup()
+  When I click the signUp link                                             # stepDefinitions.StepDef_Signup.clickLink()
+  And I click the SIGN UP button                                           # stepDefinitions.StepDef_Signup.clickSignup()
+  Then I should see the following error messages:                          # stepDefinitions.StepDef_Signup.verifyErrorMessages(io.cucumber.datatable.DataTable)
+  When I enter "abc" in Username field                                     # stepDefinitions.StepDef_Signup.enterUsername(java.lang.String)
+  And I enter "abc" in Password field                                      # stepDefinitions.StepDef_Signup.enterPassowrd(java.lang.String)
+  And I enter "def" in Confirm Password field                              # stepDefinitions.StepDef_Signup.enterConfirmPassowrd(java.lang.String)
+  Then I should see the following error messages:                          # stepDefinitions.StepDef_Signup.verifyErrorMessages(io.cucumber.datatable.DataTable)
+  When I enter "donaldtrump" in Username field                             # stepDefinitions.StepDef_Signup.enterUsername(java.lang.String)
+  Then I should see error message "Username already exists" for Username   # stepDefinitions.StepDef_Signup.verifyFieldError(java.lang.String,java.lang.String)
+  When I enter "robinhood" in Username field                               # stepDefinitions.StepDef_Signup.enterUsername(java.lang.String)
+  And I enter "letmein2019" in Password field                              # stepDefinitions.StepDef_Signup.enterPassowrd(java.lang.String)
+  And I enter "letmein2019" in Confirm Password field                      # stepDefinitions.StepDef_Signup.enterConfirmPassowrd(java.lang.String)
+  When I click the SIGN UP button                                          # stepDefinitions.StepDef_Signup.clickSignup()
+  And I should see snackbar message "Thanks robinhood, you can now login." # stepDefinitions.StepDef_Signup.verifySnackbarMessage(java.lang.String)
